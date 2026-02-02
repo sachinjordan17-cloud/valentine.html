@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Will You Be My Valentine?</title>
+  <style>
+    body {
+      background-color: #ffccd5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      color: #d6336c;
+      text-align: center;
+      overflow: hidden;
+    }
+    h1 {
+      font-size: 3em;
+      animation: pop 1s ease-in-out infinite alternate;
+    }
+    @keyframes pop {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.05); }
+    }
+    button {
+      margin: 15px;
+      padding: 10px 25px;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    #yes {
+      background-color: #ff80aa;
+      color: white;
+    }
+    #yes:hover {
+      background-color: #ff4081;
+    }
+    #no {
+      background-color: #ffffff;
+      color: #d6336c;
+    }
+    #no:hover {
+      background-color: #ffccd5;
+    }
+  </style>
+</head>
+<body>
+  <h1>💖 Will You Be My Valentine? 💖</h1>
+  <div>
+    <button id="yes">Yes 💘</button>
+    <button id="no">No 😢</button>
+  </div>
+
+  <script>
+    const yesBtn = document.getElementById('yes');
+    const noBtn = document.getElementById('no');
+
+    yesBtn.addEventListener('click', () => {
+      document.body.innerHTML = '<h1>Yay! ❤️ I knew you would say yes!</h1>';
+    });
+
+    noBtn.addEventListener('mouseover', () => {
+      noBtn.style.position = 'absolute';
+      noBtn.style.top = Math.random() * window.innerHeight + 'px';
+      noBtn.style.left = Math.random() * window.innerWidth + 'px';
+    });
+  </script>
+</body>
+</html>
